@@ -1,0 +1,603 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+img {
+    border: none;
+    outline: none;
+    overflow: hidden;
+}
+
+/* Colors */
+
+:root {
+/* Primary */
+ --Orange: hsl(26, 100%, 55%);
+--PaleOrange: hsl(25, 100%, 94%);
+
+/* Nuetral */
+--VeryDarkBlue: hsl(220, 13%, 13%);
+--DarkGrayishBlue: hsl(219, 9%, 45%);
+--GrayishBlue: hsl(220, 14%, 75%);
+--LightGrayishBlue: hsl(223, 64%, 98%);
+--White: hsl(0, 0%, 100%);
+--Black: hsl(0, 0%, 0%);
+}
+
+/* Typography */
+p {
+    font-size: 16px;
+}
+
+/* Main---------Container */
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Navigation---------Bar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+.mobilenav {
+    display: none;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.navbar-logo {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin-left: 3rem;
+    align-items: center;
+    color: #69707D;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 173.333% */
+    
+    
+}
+
+.border-bottom {
+    position: relative;
+}
+
+.border-bottom::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3rem; /* Adjust this value to control the space below the border */
+    border-bottom: 4px solid var(--Orange); /* Your border style here */
+}
+
+
+.navbar-icons {
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    
+}
+
+
+.user {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.cart-icon-wrapper {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--Orange);
+    border-radius: 50%;
+    color: var(--White);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.cart{
+    width: 21.821px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.cart-icon {
+    background: none;           /* Removes the default background */
+    border: none;               /* Removes the default border */
+    padding: 0;                 /* Removes the default padding */
+    cursor: pointer;            /* Shows the hand icon on hover, signaling it's clickable */
+    outline: none;              /* Removes the focus outline (use with caution) */
+    overflow: hidden;
+}
+
+hr {
+    border: 1px solid var(--GrayishBlue);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Navigation---------Bar---End */
+
+/* Cart---------Section */
+
+.cart-wrapper {
+    width: 360px;
+    height: 256px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.50);
+    position: absolute;
+    right: 0;
+    top: 100px;
+    padding: 1.6rem;
+    display: none;
+    
+
+}
+
+
+.cart-title {
+    font-size: 16px;
+    color: var(--Black);
+}
+
+.cart-info-wrapper {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-info {
+    color: var(--GrayishBlue);
+    padding: 1rem;
+}
+
+.cart-info span {
+    font-weight: 700;
+    color: var(--VeryDarkBlue);
+}
+
+.product-img {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    /* display: none; */
+    border-radius: 4px;
+}
+
+
+
+.delete {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border: none;
+    background: none;           /* Removes the default background */
+    cursor: pointer;            /* Shows the hand icon on hover, signaling it's clickable */
+    outline: none;              /* Removes the focus outline (use with caution) */
+    overflow: hidden;
+}
+
+.delete:focus {
+    outline: none;
+}
+
+.checkout-btn {
+    padding: 1rem 2rem;
+    width: 100%;
+    background-color: var(--Orange);
+    color: var(--White);
+    margin-top: 1rem;
+    border-radius: 10px;
+}
+
+
+
+/* Main---------Section */
+
+.main-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    max-width: 1030px;
+    height: auto;
+}
+
+.shoe-images {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.img-product1 {
+    width: 445px;
+    height: 445px;
+    border-radius: 15px;
+}
+
+.lightbox-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.lightbox-wrapper .image {
+    width: 88px;
+    height: 88px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 2px solid var(--Orange);
+    transition: .2s linear;
+}
+
+.lightbox-wrapper .image:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: red;
+}
+
+.popup-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    z-index: 100;
+    display: none;
+    justify-content: center;
+    align-items: center;  /* this will center the img inside it */
+}
+
+
+.popup-image img {
+    max-width: 80%;
+    max-height: 80%; 
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.main-section .popup-image span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white; 
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 101; 
+}
+
+
+
+
+
+/* Main--------Section---Right */
+
+.shoe-info-purchase {
+    width: 445px;
+    height: 426px;
+    flex-shrink: 0;
+}
+
+.sneaker-company {
+    color: var(--Orange);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.shoe-title {
+    color: var(--VeryDarkBlue);
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 48px; /* 109.091% */
+    margin-bottom: 2rem;
+}
+
+.shoe-description {
+    color: var(--DarkGrayishBlue);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px; /* 162.5% */
+    margin-bottom: 1rem;
+}
+
+.price-wrapper {
+    width: 173px;
+    height: 68px;
+    position: relative;
+    flex-shrink: 0;
+    margin-bottom: 2rem;
+}
+
+.current-price {
+    top: 0;
+    left: 0;
+    position: absolute;
+    color: var(--VeryDarkBlue);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.discount {
+    color: var(--Orange);
+    font-size: 12px;
+    position:absolute;
+    top: 1rem;
+    right: 0;
+    background-color: var(--PaleOrange);
+    padding: 3px;
+}
+
+.original-price {
+    color: var(--GrayishBlue);
+    font-size: 12px;
+    text-decoration: line-through;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.button-wrapper {
+    justify-content: space-between;
+    display: flex;
+}
+
+.wrapper{
+    height: 56px;
+    width: 157px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFF;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+  .wrapper span{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    color: var(--Orange);
+  }
+  .wrapper span.num{
+    font-size: 18px;
+    pointer-events: none;
+  }
+
+
+  .add-to-cart {
+    width: 272px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: var(--Orange);
+    box-shadow: 0px 20px 50px -20px #FF7E1B;
+    border: none;
+    color: var(--White);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    
+  }
+
+  .add-to-cart:hover {
+    transform: translateY(-5px);
+  }
+
+  .add-to-cart img {
+    margin-right: 1rem;
+    fill: white;
+  }
+
+  @media (max-width: 768px) {
+    .container .popup-image img{
+        width: 95%;
+        height: 95%;
+    }
+  }
+
+
+  @media only screen and (max-width: 1024px) {
+    /* Adjust the layout for tablet screens here */
+    .navbar {
+        flex-direction: column;
+    }
+    
+    .navbar-links {
+        margin-left: 0;
+    }
+
+    .main-section {
+        flex-direction: column-reverse;
+    }
+
+    .shoe-images, .shoe-info-purchase {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cart-wrapper {
+        width: 100%;
+        position: static;
+        box-shadow: none;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+        z-index: 100;
+        
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+    }
+
+    .mobilenav{
+        width: 250px;
+        height: 900px;
+        padding: 3rem 0;
+        display: hidden;
+        z-index: 101;
+        position: absolute;
+        top: 2rem;
+        background-color: var(--White);
+        
+    }
+
+    .mobilenav span{
+        font-size: 2rem;
+        padding-left: 2rem;
+        color: var(--GrayishBlue);
+        cursor: pointer;
+    }
+
+    .mobile-links {
+        list-style: none;
+        margin-top: 4rem;
+    }
+
+    .mobile-link {
+        padding-bottom: 1rem;
+        padding-left: 2rem;
+        color: var(--VeryDarkBlue);
+        font-weight: 700;
+    }
+
+    .navbar-links {
+        display: none; /* hides navbar links */
+    }
+    
+    .hamburger-menu {
+        display: flex; /* shows hamburger menu */
+        padding-right: 10px;
+        cursor: pointer;
+    }
+
+    .navbar-logo {
+        font-size: 2rem;
+    }
+
+    .main-section {
+        flex-direction: column;
+    }
+
+    .shoe-images{
+        width: max-content;
+    }
+
+    .img-product1 {
+        width: 100%;
+    }
+
+    .shoe-info-purchase {
+        width: 100%;
+        margin-top: 1.5rem;
+        text-align: left;
+        padding: 0 3rem;
+    }
+
+    .price-wrapper {
+        width:inherit;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: static;
+        margin: 0 auto;
+    }
+
+    .current-price {
+        position: static;
+    }
+
+    .discount {
+        position: static;
+
+    }
+
+    .original-price {
+        position: static;
+    }
+
+    .lightbox-wrapper {
+        display: none;
+        margin: 0 auto;
+    }
+
+    .container .popup-image img {
+        width: 95%;
+        height: 95%;
+    }
+
+    .cart-wrapper {
+        width: 100%;
+        position: static;
+        box-shadow: none;
+    }
+
+    .button-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+        margin: 0 auto;
+    }
+
+    .wrapper {
+        width: inherit;
+    }
+
+    .add-to-cart{
+        width: inherit;
+    }
+}
