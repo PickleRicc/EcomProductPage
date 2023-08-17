@@ -84,10 +84,10 @@ document.querySelectorAll('.image').forEach(img => {
     img.onclick = () => {
         const popupID = document.getElementById('popup-id');
         if (img.src.includes('1')) {
-            popupID.src = '/ecommerce-product-page-main/images/image-product-1.jpg';
+            popupID.src = '/images/image-product-1.jpg';
         document.querySelector('.popup-image').style.display = 'flex';
         } else if (img.src.includes('2')) {
-            popupID.src = '/ecommerce-product-page-main/images/image-product-2.jpg';
+            popupID.src = '/images/image-product-2.jpg';
             document.querySelector('.popup-image').style.display = 'flex';
         }
     }
